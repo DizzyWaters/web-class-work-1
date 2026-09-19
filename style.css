@@ -1,0 +1,386 @@
+/* =========================================
+   THE UNDEAD TOMB
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #24251c 0%,
+            #11120d 55%,
+            #050605 100%
+        );
+
+    color: #21180d;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    padding: 60px 20px;
+}
+
+
+/* =========================================
+   TOMB AREA
+   ========================================= */
+
+.tomb {
+    max-width: 900px;
+    margin: auto;
+
+    position: relative;
+}
+
+
+/* =========================================
+   CURSED SCROLL
+   ========================================= */
+
+.scroll {
+    position: relative;
+
+    padding: 80px 90px;
+
+    background:
+        radial-gradient(
+            circle at 20% 15%,
+            rgba(75, 60, 20, 0.25),
+            transparent 18%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(60, 40, 10, 0.28),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 40% 90%,
+            rgba(50, 50, 10, 0.18),
+            transparent 20%
+        ),
+
+        linear-gradient(
+            90deg,
+            #695522 0%,
+            #b49a56 4%,
+            #d1b873 10%,
+            #c5a861 50%,
+            #d3bc7d 88%,
+            #8a7136 97%,
+            #4a3a19 100%
+        );
+
+    border: 4px solid #382b13;
+
+    border-radius:
+        4% 2% 5% 3% /
+        2% 5% 3% 6%;
+
+    box-shadow:
+        0 0 15px #000,
+        0 0 60px #000,
+        inset 0 0 45px #3c2a0b,
+        inset 0 0 120px rgba(49, 35, 8, 0.55);
+
+    transform: rotate(-0.3deg);
+}
+
+
+/* weird damaged scroll edges */
+
+.scroll::before,
+.scroll::after {
+    content: "";
+
+    position: absolute;
+
+    left: 3%;
+    width: 94%;
+    height: 22px;
+
+    background: #4c3917;
+
+    opacity: 0.7;
+
+    filter: blur(3px);
+}
+
+.scroll::before {
+    top: -8px;
+
+    border-radius:
+        60% 20% 70% 30%;
+}
+
+.scroll::after {
+    bottom: -8px;
+
+    border-radius:
+        20% 70% 30% 60%;
+}
+
+
+/* =========================================
+   TITLE
+   ========================================= */
+
+header {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 5px;
+
+    font-size: 2.4rem;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #211306;
+
+    text-shadow:
+        1px 1px #a88b45,
+        2px 2px #49330f;
+}
+
+h2 {
+    margin-top: 0;
+
+    font-weight: normal;
+
+    font-style: italic;
+
+    color: #4a3015;
+}
+
+
+/* =========================================
+   CURSE TEXT
+   ========================================= */
+
+.curse {
+    font-size: 0.75rem;
+
+    letter-spacing: 6px;
+
+    color: #5a120d;
+
+    margin-bottom: 35px;
+
+    text-shadow:
+        0 0 2px #44100b;
+}
+
+
+/* =========================================
+   TERRIBLE ANCIENT LINKS
+   ========================================= */
+
+.ancient-links {
+    margin: 45px auto;
+
+    padding: 20px;
+
+    max-width: 500px;
+
+    border-top: 2px dashed #5a431d;
+    border-bottom: 2px dashed #5a431d;
+
+    text-align: center;
+}
+
+.ancient-links a {
+    display: block;
+
+    margin: 9px;
+
+    color: #471d12;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.9rem;
+
+    text-decoration: underline;
+}
+
+.ancient-links a:hover {
+    color: #7c0505;
+
+    text-shadow:
+        0 0 5px #811515;
+}
+
+
+/* =========================================
+   AUTHOR
+   ========================================= */
+
+.author {
+    text-align: center;
+
+    margin: 50px 0 20px;
+}
+
+.author h3 {
+    margin-bottom: 5px;
+
+    font-size: 1.8rem;
+
+    letter-spacing: 2px;
+}
+
+.author p {
+    margin-top: 0;
+
+    color: #4b351a;
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   SKULL DIVIDER
+   ========================================= */
+
+.divider {
+    text-align: center;
+
+    margin: 35px 0;
+
+    font-size: 1.5rem;
+
+    color: #401208;
+
+    letter-spacing: 20px;
+}
+
+
+/* =========================================
+   POEM
+   ========================================= */
+
+.poem {
+    max-width: 650px;
+
+    margin: auto;
+}
+
+.poem p {
+    font-size: 1.15rem;
+
+    line-height: 1.8;
+
+    text-align: left;
+
+    letter-spacing: 0.4px;
+
+    color: #24180c;
+
+    text-shadow:
+        0.5px 0.5px rgba(80, 55, 20, 0.4);
+}
+
+
+/* first letter like an ancient manuscript */
+
+.poem p::first-letter {
+    float: left;
+
+    font-size: 5rem;
+
+    line-height: 0.8;
+
+    margin-right: 10px;
+
+    color: #650d08;
+
+    font-weight: bold;
+
+    font-family: Georgia, serif;
+
+    text-shadow:
+        2px 2px #2c1208;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    margin-top: 70px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid #60451d;
+
+    text-align: center;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 5px;
+
+    color: #501810;
+}
+
+
+/* =========================================
+   ADD SOME CRUSTY ANCIENT FEEL
+   ========================================= */
+
+.scroll {
+    filter:
+        sepia(0.25)
+        contrast(1.08);
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 25px 10px;
+    }
+
+    .scroll {
+        padding: 50px 25px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .poem p {
+        font-size: 1rem;
+        line-height: 1.65;
+    }
+
+    .curse {
+        letter-spacing: 3px;
+    }
+
+}
