@@ -1,18 +1,29 @@
-/* =========================================
-   THE UNDEAD TOMB
-   ========================================= */
+@import url(
+    'https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=UnifrakturCook:wght@700&display=swap'
+);
+
+
+/* =========================
+   GENERAL
+   ========================= */
 
 * {
     box-sizing: border-box;
 }
 
+
 html {
     min-height: 100%;
 }
 
+
 body {
+
     margin: 0;
+
     min-height: 100vh;
+
+    padding: 60px 20px;
 
     background:
         radial-gradient(
@@ -24,37 +35,36 @@ body {
 
     color: #21180d;
 
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    padding: 60px 20px;
+    font-family: Georgia, "Times New Roman", serif;
 }
 
 
-/* =========================================
-   TOMB AREA
-   ========================================= */
+/* =========================
+   TOMB
+   ========================= */
 
 .tomb {
+
     max-width: 900px;
+
     margin: auto;
 
     position: relative;
 }
 
 
-/* =========================================
-   CURSED SCROLL
-   ========================================= */
+/* =========================
+   OLD SCROLL
+   ========================= */
 
 .scroll {
+
     position: relative;
 
     padding: 80px 90px;
 
     background:
+
         radial-gradient(
             circle at 20% 15%,
             rgba(75, 60, 20, 0.25),
@@ -97,18 +107,24 @@ body {
         inset 0 0 120px rgba(49, 35, 8, 0.55);
 
     transform: rotate(-0.3deg);
+
+    filter:
+        sepia(0.25)
+        contrast(1.08);
 }
 
 
-/* weird damaged scroll edges */
+/* damaged edges */
 
 .scroll::before,
 .scroll::after {
+
     content: "";
 
     position: absolute;
 
     left: 3%;
+
     width: 94%;
     height: 22px;
 
@@ -119,14 +135,18 @@ body {
     filter: blur(3px);
 }
 
+
 .scroll::before {
+
     top: -8px;
 
     border-radius:
         60% 20% 70% 30%;
 }
 
+
 .scroll::after {
+
     bottom: -8px;
 
     border-radius:
@@ -134,162 +154,228 @@ body {
 }
 
 
-/* =========================================
-   TITLE
-   ========================================= */
+/* =========================
+   HEADER
+   ========================= */
 
 header {
+
     text-align: center;
 }
 
+
+/* gothic main title */
+
 h1 {
-    margin-bottom: 5px;
 
-    font-size: 2.4rem;
+    margin-bottom: 8px;
 
-    letter-spacing: 3px;
+    font-family: "UnifrakturCook", cursive;
 
-    text-transform: uppercase;
+    font-size: 3.5rem;
 
-    color: #211306;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #2b0b08;
 
     text-shadow:
-        1px 1px #a88b45,
-        2px 2px #49330f;
+        1px 1px 0 #a88b45,
+        2px 2px 0 #49330f,
+        0 0 6px rgba(80, 0, 0, 0.5);
 }
 
+
+/* subtitle */
+
 h2 {
+
     margin-top: 0;
+
+    font-family: "Cinzel Decorative", serif;
 
     font-weight: normal;
 
-    font-style: italic;
+    font-size: 1.2rem;
 
-    color: #4a3015;
+    letter-spacing: 2px;
+
+    color: #4a2015;
 }
 
 
-/* =========================================
-   CURSE TEXT
-   ========================================= */
+/* =========================
+   CURSED TOP TEXT
+   ========================= */
 
 .curse {
-    font-size: 0.75rem;
-
-    letter-spacing: 6px;
-
-    color: #5a120d;
 
     margin-bottom: 35px;
+
+    font-family: "Cinzel Decorative", serif;
+
+    font-weight: 700;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 5px;
+
+    color: #650c08;
 
     text-shadow:
         0 0 2px #44100b;
 }
 
 
-/* =========================================
-   TERRIBLE ANCIENT LINKS
-   ========================================= */
+/* =========================
+   NAV LINKS
+   ========================= */
 
 .ancient-links {
+
+    max-width: 520px;
+
     margin: 45px auto;
 
     padding: 20px;
 
-    max-width: 500px;
-
     border-top: 2px dashed #5a431d;
+
     border-bottom: 2px dashed #5a431d;
 
     text-align: center;
 }
 
+
 .ancient-links a {
+
     display: block;
 
-    margin: 9px;
+    margin: 11px;
 
-    color: #471d12;
+    font-family: "Cinzel Decorative", serif;
 
-    font-family:
-        "Courier New",
-        monospace;
+    font-size: 0.85rem;
 
-    font-size: 0.9rem;
+    letter-spacing: 1px;
 
-    text-decoration: underline;
+    color: #48150e;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease,
+        text-shadow 0.2s ease;
 }
+
+
+.ancient-links a::before {
+
+    content: "† ";
+}
+
+
+.ancient-links a::after {
+
+    content: " †";
+}
+
 
 .ancient-links a:hover {
-    color: #7c0505;
+
+    color: #8b0000;
+
+    transform: scale(1.03);
 
     text-shadow:
-        0 0 5px #811515;
+        0 0 4px #8b0000,
+        0 0 8px #300000;
 }
 
 
-/* =========================================
+/* =========================
    AUTHOR
-   ========================================= */
+   ========================= */
 
 .author {
-    text-align: center;
 
     margin: 50px 0 20px;
+
+    text-align: center;
 }
+
 
 .author h3 {
+
     margin-bottom: 5px;
 
-    font-size: 1.8rem;
+    font-family: "UnifrakturCook", cursive;
 
-    letter-spacing: 2px;
+    font-size: 2.5rem;
+
+    letter-spacing: 1px;
+
+    color: #311006;
 }
+
 
 .author p {
+
     margin-top: 0;
 
-    color: #4b351a;
+    font-family: "Cinzel", serif;
 
     font-style: italic;
+
+    color: #4b351a;
 }
 
 
-/* =========================================
+/* =========================
    SKULL DIVIDER
-   ========================================= */
+   ========================= */
 
 .divider {
-    text-align: center;
 
     margin: 35px 0;
 
+    text-align: center;
+
     font-size: 1.5rem;
 
-    color: #401208;
-
     letter-spacing: 20px;
+
+    color: #401208;
 }
 
 
-/* =========================================
+/* =========================
    POEM
-   ========================================= */
+   ========================= */
 
 .poem {
+
     max-width: 650px;
 
     margin: auto;
 }
 
+
 .poem p {
+
+    margin: 0;
+
+    font-family: "Cinzel", Georgia, serif;
+
     font-size: 1.15rem;
 
     line-height: 1.8;
 
-    text-align: left;
-
-    letter-spacing: 0.4px;
+    letter-spacing: 0.3px;
 
     color: #24180c;
 
@@ -298,33 +384,38 @@ h2 {
 }
 
 
-/* first letter like an ancient manuscript */
+/* giant medieval first letter */
 
 .poem p::first-letter {
+
     float: left;
 
-    font-size: 5rem;
+    margin-right: 12px;
 
-    line-height: 0.8;
+    margin-top: 8px;
 
-    margin-right: 10px;
+    font-family: "UnifrakturCook", cursive;
 
-    color: #650d08;
+    font-size: 6rem;
+
+    line-height: 0.75;
 
     font-weight: bold;
 
-    font-family: Georgia, serif;
+    color: #750c07;
 
     text-shadow:
-        2px 2px #2c1208;
+        2px 2px #261007,
+        0 0 5px #9d6a29;
 }
 
 
-/* =========================================
+/* =========================
    FOOTER
-   ========================================= */
+   ========================= */
 
 footer {
+
     margin-top: 70px;
 
     padding-top: 30px;
@@ -332,6 +423,8 @@ footer {
     border-top: 1px solid #60451d;
 
     text-align: center;
+
+    font-family: "Cinzel Decorative", serif;
 
     font-size: 0.75rem;
 
@@ -341,46 +434,101 @@ footer {
 }
 
 
-/* =========================================
-   ADD SOME CRUSTY ANCIENT FEEL
-   ========================================= */
+/* =========================
+   PRINT MODE
+   ========================= */
 
-.scroll {
-    filter:
-        sepia(0.25)
-        contrast(1.08);
+@media print {
+
+    body {
+
+        background: white;
+
+        padding: 0;
+    }
+
+
+    .scroll {
+
+        border: none;
+
+        box-shadow: none;
+
+        transform: none;
+
+        filter: none;
+    }
+
+
+    .ancient-links,
+    .curse {
+
+        display: none;
+    }
 }
 
 
-/* =========================================
+/* =========================
    MOBILE
-   ========================================= */
+   ========================= */
 
 @media (max-width: 700px) {
 
     body {
+
         padding: 25px 10px;
     }
 
+
     .scroll {
+
         padding: 50px 25px;
     }
 
+
     h1 {
-        font-size: 1.6rem;
+
+        font-size: 2.4rem;
     }
+
 
     h2 {
-        font-size: 1rem;
+
+        font-size: 0.9rem;
     }
+
 
     .poem p {
+
         font-size: 1rem;
-        line-height: 1.65;
+
+        line-height: 1.7;
     }
 
+
+    .poem p::first-letter {
+
+        font-size: 4.5rem;
+    }
+
+
     .curse {
-        letter-spacing: 3px;
+
+        letter-spacing: 2px;
+
+        font-size: 0.65rem;
+    }
+
+
+    .divider {
+
+        letter-spacing: 10px;
+    }
+
+
+    .ancient-links a {
+
+        font-size: 0.75rem;
     }
 
 }

@@ -8,6 +8,84 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
+<script>
+    function shareFacebook() {
+        const url = encodeURIComponent(window.location.href);
+
+        window.open(
+            "https://www.facebook.com/sharer/sharer.php?u=" + url,
+            "_blank"
+        );
+    }
+
+
+    function shareTwitter() {
+        const url = encodeURIComponent(window.location.href);
+
+        const text = encodeURIComponent(
+            "Hamlet, Act III, Scene I — To be, or not to be"
+        );
+
+        window.open(
+            "https://twitter.com/intent/tweet?text=" +
+            text +
+            "&url=" +
+            url,
+            "_blank"
+        );
+    }
+
+
+    function shareTumblr() {
+        const url = encodeURIComponent(window.location.href);
+
+        const title = encodeURIComponent(
+            "Hamlet, Act III, Scene I — To be, or not to be"
+        );
+
+        window.open(
+            "https://www.tumblr.com/widgets/share/tool" +
+            "?canonicalUrl=" +
+            url +
+            "&title=" +
+            title,
+            "_blank"
+        );
+    }
+
+
+    function copyEmbed() {
+        const url = window.location.href;
+
+        const embedCode =
+            '<iframe src="' +
+            url +
+            '" width="800" height="600"></iframe>';
+
+        navigator.clipboard.writeText(embedCode)
+            .then(() => {
+                alert("Embed code copied to clipboard.");
+            })
+            .catch(() => {
+                alert("Could not copy embed code.");
+            });
+    }
+
+
+    function addToAnthology() {
+        const poem = {
+            title: "Hamlet, Act III, Scene I [To be, or not to be]",
+            author: "William Shakespeare"
+        };
+
+        localStorage.setItem(
+            "hamlet-poem",
+            JSON.stringify(poem)
+        );
+
+        alert("The manuscript has been added to your anthology.");
+    }
+</script>
 
 <body>
 
@@ -22,42 +100,45 @@
                 <h2>[To be, or not to be]</h2>
             </header>
 
+    <nav class="ancient-links">
+    <a
+        href="#"
+        onclick="shareFacebook(); return false;">
+        Share on Facebook
+    </a>
 
-            <nav class="ancient-links">
+    <a
+        href="#"
+        onclick="shareTwitter(); return false;">
+        Share on Twitter
+    </a>
 
-                <a href="#"
-                   onclick="shareFacebook(); return false;">
-                    Share on Facebook
-                </a>
+    <a
+        href="#"
+        onclick="shareTumblr(); return false;">
+        Share on Tumblr
+    </a>
 
-                <a href="#"
-                   onclick="shareTwitter(); return false;">
-                    Share on Twitter
-                </a>
+    <a
+        href="#"
+        onclick="window.print(); return false;">
+        View print mode
+    </a>
 
-                <a href="#"
-                   onclick="shareTumblr(); return false;">
-                    Share on Tumblr
-                </a>
+    <a
+        href="#"
+        onclick="copyEmbed(); return false;">
+        Copy embed code
+    </a>
 
-                <a href="#"
-                   onclick="window.print(); return false;">
-                    View print mode
-                </a>
+    <a
+        href="#poem"
+        onclick="addToAnthology();">
+        Add this poem to an anthology
+    </a>
+    </nav>
 
-                <a href="#"
-                   onclick="copyEmbed(); return false;">
-                    Copy embed code
-                </a>
-
-                <a href="#poem"
-                   onclick="addToAnthology();">
-                    Add this poem to an anthology
-                </a>
-
-            </nav>
-
-
+     
             <section class="author">
                 <h3>William Shakespeare</h3>
                 <p>1564 – 1616</p>
@@ -128,95 +209,6 @@
         </article>
 
     </main>
-
-
-    <script>
-
-        function shareFacebook() {
-            const url = encodeURIComponent(window.location.href);
-
-            window.open(
-                "https://www.facebook.com/sharer/sharer.php?u=" + url,
-                "_blank"
-            );
-        }
-
-
-        function shareTwitter() {
-            const url = encodeURIComponent(window.location.href);
-
-            const text = encodeURIComponent(
-                "Hamlet, Act III, Scene I — To be, or not to be"
-            );
-
-            window.open(
-                "https://twitter.com/intent/tweet?text=" +
-                text +
-                "&url=" +
-                url,
-                "_blank"
-            );
-        }
-
-
-        function shareTumblr() {
-            const url = encodeURIComponent(window.location.href);
-
-            const title = encodeURIComponent(
-                "Hamlet, Act III, Scene I — To be, or not to be"
-            );
-
-            window.open(
-                "https://www.tumblr.com/widgets/share/tool" +
-                "?canonicalUrl=" +
-                url +
-                "&title=" +
-                title,
-                "_blank"
-            );
-        }
-
-
-        function copyEmbed() {
-
-            const url = window.location.href;
-
-            const embedCode =
-                '<iframe src="' +
-                url +
-                '" width="800" height="600"></iframe>';
-
-            navigator.clipboard
-                .writeText(embedCode)
-
-                .then(() => {
-                    alert("Embed code copied to clipboard.");
-                })
-
-                .catch(() => {
-                    alert("Could not copy embed code.");
-                });
-        }
-
-
-        function addToAnthology() {
-
-            const poem = {
-                title: "Hamlet, Act III, Scene I [To be, or not to be]",
-                author: "William Shakespeare"
-            };
-
-            localStorage.setItem(
-                "hamlet-poem",
-                JSON.stringify(poem)
-            );
-
-            alert(
-                "The manuscript has been added to your anthology."
-            );
-        }
-
-    </script>
 
 </body>
 </html>
